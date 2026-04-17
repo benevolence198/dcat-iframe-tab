@@ -1,6 +1,6 @@
 <?php
 
-namespace Mosiboom\DcatIframeTab;
+namespace Benevolence\DcatIframeTab;
 
 use Dcat\Admin\Admin;
 use Dcat\Admin\Grid;
