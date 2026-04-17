@@ -15,7 +15,7 @@
 运行以下命令：
 
 ```
-$ composer require benevolence/dcat-iframe-tab
+$ composer require benevolences/dcat-iframe-tab
 ```
 
 然后运行：
@@ -36,8 +36,8 @@ $ php artisan vendor:publish --tag=iframe-tab.view
 
 基本迭代更新命令：
 ```apacheconfig
-composer remove benevolence/dcat-iframe-tab
-composer require benevolence/dcat-iframe-tab:版本号
+composer remove benevolences/dcat-iframe-tab
+composer require benevolences/dcat-iframe-tab:版本号
 php artisan vendor:publish --tag=iframe-tab --force
 ```
 
