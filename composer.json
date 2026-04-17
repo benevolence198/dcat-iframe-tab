@@ -1,5 +1,5 @@
 {
-  "name": "mosiboom/dcat-iframe-tab",
+  "name": "benevolence/dcat-iframe-tab",
   "description": "iframe-tab framework for dcat-admin",
   "type": "laravel-extension",
   "authors": [
@@ -11,17 +11,17 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Mosiboom\\DcatIframeTab\\IframeTabProvider"
+        "Benevolence\\DcatIframeTab\\IframeTabProvider"
       ],
       "aliases": {
-        "IframeTab": "Mosiboom\\DcatIframeTab\\IframeTab"
+        "IframeTab": "Benevolence\\DcatIframeTab\\IframeTab"
       },
       "dont-discover": []
     }
   },
   "autoload": {
     "psr-4": {
-      "Mosiboom\\DcatIframeTab\\": "src/"
+      "Benevolence\\DcatIframeTab\\": "src/"
     },
     "files": [
       "src/helpers.php"
