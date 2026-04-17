@@ -10,18 +10,19 @@ use Illuminate\Support\ServiceProvider;
 class IframeTabProvider extends ServiceProvider
 {
     /**
-     * Bootstrap services.
+     * Register services.
      *
      * @return void
      */
-    public function boot()
+    public function register()
     {
-        // 必须在 boot 中注册：若本包在 AdminServiceProvider 之前 register，register 阶段
-        // 尚未执行 Dcat 的 admin.context 等绑定，会触发 BindingResolutionException。
+        //注册 Dcat的容器事件
         if (config('iframe_tab.enable')) {
             $this->app->resolving(Content::class, function ($content, $app) {
+                //设置view 为 iframe.full-content
                 $content->view('iframe-tab::full-content');
-                if (strpos(request()->getUri(), 'auth/login') !== false) {
+                if(strpos(request()->getUri(),'auth/login') !== false){
+                    #退出登录不记录当前页面
                     session()->forget('url.intended');
                     Admin::script(<<<JS
                     if (window != top)
@@ -31,8 +32,9 @@ JS
                 }
             });
             Content::resolving(function (Content $content) {
+                //设置view 为 iframe.full-content
                 $content->view('iframe-tab::full-content');
-                if (strpos(request()->getUri(), 'auth/login') !== false) {
+                if(strpos(request()->getUri(),'auth/login') !== false){
                     Admin::script(<<<JS
                     if (window != top)
                         top.location.href = location.href; 
@@ -44,7 +46,15 @@ JS
                 $grid->setDialogFormDimensions(config('iframe_tab.dialog_area_width'), config('iframe_tab.dialog_area_height'));
             });
         }
+    }
 
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         $this->loadViewsFrom(__DIR__ . '/resource/views', 'iframe-tab');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->publishes([
