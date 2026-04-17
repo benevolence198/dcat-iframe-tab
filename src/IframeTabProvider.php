@@ -1,6 +1,6 @@
 <?php
 
-namespace Benevolence\DcatIframeTab;
+namespace Benevolences\DcatIframeTab;
 
 use Dcat\Admin\Admin;
 use Dcat\Admin\Grid;

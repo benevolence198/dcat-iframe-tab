@@ -1,5 +1,5 @@
 {
-  "name": "benevolence/dcat-iframe-tab",
+  "name": "benevolences/dcat-iframe-tab",
   "description": "iframe-tab framework for dcat-admin",
   "type": "laravel-extension",
   "authors": [
@@ -11,17 +11,17 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Benevolence\\DcatIframeTab\\IframeTabProvider"
+        "Benevolences\\DcatIframeTab\\IframeTabProvider"
       ],
       "aliases": {
-        "IframeTab": "Benevolence\\DcatIframeTab\\IframeTab"
+        "IframeTab": "Benevolences\\DcatIframeTab\\IframeTab"
       },
       "dont-discover": []
     }
   },
   "autoload": {
     "psr-4": {
-      "Benevolence\\DcatIframeTab\\": "src/"
+      "Benevolences\\DcatIframeTab\\": "src/"
     },
     "files": [
       "src/helpers.php"

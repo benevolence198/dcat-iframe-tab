@@ -1,6 +1,6 @@
 <?php
 
-use Benevolence\DcatIframeTab\Controllers\IframeController;
+use Benevolences\DcatIframeTab\Controllers\IframeController;
 
 if (config('iframe_tab.enable')) {
     $attributes = [

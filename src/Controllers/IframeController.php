@@ -1,6 +1,6 @@
 <?php
 
-namespace Benevolence\DcatIframeTab\Controllers;
+namespace Benevolences\DcatIframeTab\Controllers;
 
 use Dcat\Admin\Layout\Content;
 use Illuminate\Routing\Controller;
