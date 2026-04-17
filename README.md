@@ -51,6 +51,20 @@ This will override css and js files to `/public/vendor/laravel-admin-ext/iframe-
 
 此操作会覆盖css和js还有配置文件，配置文件可以根据自己的需要来选择是否强制覆盖
 
+### laravel12 需要新增
+## 修改composer
+"extra": {
+    "laravel": {
+        "dont-discover": [
+            "benevolences/dcat-iframe-tab"
+        ]
+    }
+},
+
+## 文件新增 bootstrap/providers.php
+// 包发现顺序下 iframe-tab 会早于 laravel-admin，导致 admin.context 未绑定，故延后手动注册
+\Benevolences\DcatIframeTab\IframeTabProvider::class,
+
 ## 配置
 
 配置文件在 `config/iframe_tab.php`下dcat-Iframe-tab可提供的配置并不多，根据自己的需要去配置：
